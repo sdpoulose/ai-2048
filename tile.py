@@ -5,6 +5,8 @@ class Tile:
         self.value = value
 
 
+# instantiate all the tiles
+
 tile_1 = Tile(1, 0)
 tile_2 = Tile(2, 0)
 tile_3 = Tile(3, 0)
