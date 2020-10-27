@@ -19,4 +19,8 @@ def refresh_game():
     print("_____________")
 
 
-refresh_game()
+while(1):
+    refresh_game()
+    next_move = input()
+    if next_move == 'q':
+        break
