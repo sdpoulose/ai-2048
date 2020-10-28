@@ -1,4 +1,5 @@
 from tile import *
+from player import *
 import random
 
 game_state = [tile_1, tile_2, tile_3, tile_4,
@@ -38,22 +39,6 @@ def refresh_game(game_state, game_on):
         print("")
     print("", end='')
     print("_____________")
-
-
-def move_up(game_state):
-    pass
-
-
-def move_down(game_state):
-    pass
-
-
-def move_left(game_state):
-    pass
-
-
-def move_right(game_state):
-    pass
 
 
 while(1):
