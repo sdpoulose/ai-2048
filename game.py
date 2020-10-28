@@ -49,4 +49,12 @@ while(1):
     next_move = input()
     if next_move == 'q':
         game_on = False
+    elif next_move == 'w':
+        move_up(game_state)
+    elif next_move == 's':
+        move_down(game_state)
+    elif next_move == 'a':
+        move_left(game_state)
+    elif next_move == 'd':
+        move_right(game_state)
     get_blanks(game_state)
