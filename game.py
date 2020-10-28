@@ -19,8 +19,25 @@ def refresh_game():
     print("_____________")
 
 
+def move_up():
+    pass
+
+
+def move_down():
+    pass
+
+
+def move_left():
+    pass
+
+
+def move_right():
+    pass
+
+
 while(1):
     refresh_game()
+    print("Press 'q' + 'Enter' to exit.")
     next_move = input()
     if next_move == 'q':
         break
