@@ -16,7 +16,8 @@ def get_blanks(game_state):
     for tile in game_state:
         if tile.value == 0:
             blank_tiles.append(tile.id)
-    new_tile_id = random.randint(1, len(blank_tiles))
+    new_tile = random.randint(1, len(blank_tiles))
+    new_tile_id = blank_tiles[new_tile - 1]
     if random.randint(1, 5) == 1:
         game_state[new_tile_id].value = 4
     else:
@@ -34,7 +35,7 @@ def refresh_game(game_state, game_on):
     for i in range(4):
         for tile in game_state[4*i:4*i+4]:
             if (tile.id % 4) == 0:
-                print("| " + str(tile.value) + "|", end='')
+                print("| " + str(tile.value) + " |", end='')
             else:
                 print("| " + str(tile.value), end='')
         print("")
