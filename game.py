@@ -1,14 +1,6 @@
-from tile import *
 from player import *
 import random
-
-
-game_state = [tile_1, tile_2, tile_3, tile_4,
-              tile_5, tile_6, tile_7, tile_8,
-              tile_9, tile_10, tile_11, tile_12,
-              tile_13, tile_14, tile_15, tile_16]
-
-game_on = True
+from initial_state import *
 
 
 def get_blanks(game_state):
@@ -16,8 +8,10 @@ def get_blanks(game_state):
     for tile in game_state:
         if tile.value == 0:
             blank_tiles.append(tile.id)
-    new_tile = random.randint(1, len(blank_tiles))
+    # print(len(blank_tiles))
+    new_tile = random.randint(1, len(blank_tiles)) - 1
     new_tile_id = blank_tiles[new_tile - 1]
+    # print(new_tile_id)
     if random.randint(1, 5) == 1:
         game_state[new_tile_id].value = 4
     else:

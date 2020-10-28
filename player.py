@@ -1,3 +1,4 @@
+
 def move_up(game_state):
     for iter in range(3):
         for i in range(5, 9):
