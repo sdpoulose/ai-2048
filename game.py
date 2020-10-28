@@ -2,6 +2,7 @@ from tile import *
 from player import *
 import random
 
+
 game_state = [tile_1, tile_2, tile_3, tile_4,
               tile_5, tile_6, tile_7, tile_8,
               tile_9, tile_10, tile_11, tile_12,
@@ -46,6 +47,7 @@ while(1):
         break
     refresh_game(game_state, game_on)
     print("Press 'q' + 'Enter' to exit.")
+    print("Use AWSD + 'Enter' to play")
     next_move = input()
     if next_move == 'q':
         game_on = False
