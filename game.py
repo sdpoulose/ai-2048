@@ -44,10 +44,10 @@ def move_right():
 
 
 while(1):
-    if game_state == False:
+    if game_on == False:
         break
     refresh_game(game_state, game_on)
     print("Press 'q' + 'Enter' to exit.")
     next_move = input()
     if next_move == 'q':
-        game_state = False
+        game_on = False
