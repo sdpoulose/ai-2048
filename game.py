@@ -5,8 +5,16 @@ game_state = [tile_1, tile_2, tile_3, tile_4,
               tile_9, tile_10, tile_11, tile_12,
               tile_13, tile_14, tile_15, tile_16]
 
+game_on = True
 
-def refresh_game():
+
+def check_game_on(game_state):
+    for tile in game_state:
+        if tile.value == 2048:
+            game_state = False
+
+
+def refresh_game(game_state, game_on):
     print("_____________")
     for i in range(4):
         for tile in game_state[4*i:4*i+4]:
@@ -36,8 +44,10 @@ def move_right():
 
 
 while(1):
-    refresh_game()
+    if game_state == False:
+        break
+    refresh_game(game_state, game_on)
     print("Press 'q' + 'Enter' to exit.")
     next_move = input()
     if next_move == 'q':
-        break
+        game_state = False
