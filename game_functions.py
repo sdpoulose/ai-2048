@@ -9,13 +9,15 @@ def get_blanks(game_state):
         if tile.value == 0:
             blank_tiles.append(tile.id)
     # print(len(blank_tiles))
-    new_tile = random.randint(1, len(blank_tiles)) - 1
-    new_tile_id = blank_tiles[new_tile - 1]
-    # print(new_tile_id)
-    if random.randint(1, 5) == 1:
-        game_state[new_tile_id].value = 4
-    else:
-        game_state[new_tile_id].value = 2
+
+    if len(blank_tiles) > 0:
+        new_tile = random.randint(0, len(blank_tiles) - 1)
+        new_tile_id = blank_tiles[new_tile]
+        # print(new_tile_id)
+        if random.randint(1, 5) == 1:
+            game_state[new_tile_id - 1].value = 4
+        else:
+            game_state[new_tile_id - 1].value = 2
 
 
 def check_game_on(game_state):
@@ -35,3 +37,11 @@ def refresh_game(game_state, game_on):
         print("")
     print("", end='')
     print("_____________")
+
+
+def get_max_tile(game_state):
+    max = 0
+    for tile in game_state:
+        if tile.id > max:
+            max = tile.id
+    return max
