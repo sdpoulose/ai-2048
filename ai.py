@@ -121,7 +121,7 @@ def ai_next_move(game_state):
 def ai_move(game_state, game_on):
 
     for i in range(10):
-        time.sleep(0.5)
+        # time.sleep(0.5)
         ai_next_move(game_state)
 
 
