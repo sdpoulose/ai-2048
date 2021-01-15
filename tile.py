@@ -1,11 +1,11 @@
 class Tile:
 
     def __init__(self, id, value):
-        self.id = id
-        self.value = value
+        self.id = id  # id corresponds to tile position
+        self.value = value  # value is the number value of the tile
 
 
-# instantiate all the tiles
+# instantiate all the tiles with position and initial value of 0
 
 tile_1 = Tile(1, 0)
 tile_2 = Tile(2, 0)
