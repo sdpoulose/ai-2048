@@ -1,3 +1,6 @@
+##
+# functions to update board depending on key press
+##
 
 def move_up(game_state):
     for iter in range(3):
