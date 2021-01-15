@@ -1,6 +1,9 @@
 ##
 # functions to update board depending on key press
 ##
+# move functions work by moving the 3 movable rows
+# in the desired direction and doing that 3 times
+# in order to account for possible tile additions
 
 def move_up(game_state):
     for iter in range(3):
