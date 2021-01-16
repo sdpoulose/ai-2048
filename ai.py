@@ -1,7 +1,8 @@
 from game_functions import *
 import time
+import copy
 
-level = 1
+level = 1  # level of traversal tree
 
 max_tiles_up = []
 max_tiles_down = []
@@ -11,10 +12,10 @@ max_tiles_right = []
 
 def ai_sequent_move(game_state, max_list, level):
 
-    game_state_copy_1 = game_state
-    game_state_copy_2 = game_state
-    game_state_copy_3 = game_state
-    game_state_copy_4 = game_state
+    game_state_copy_1 = copy.deepcopy(game_state)
+    game_state_copy_2 = copy.deepcopy(game_state)
+    game_state_copy_3 = copy.deepcopy(game_state)
+    game_state_copy_4 = copy.deepcopy(game_state)
 
     level += 1
 
@@ -88,10 +89,10 @@ def ai_next_move(game_state):
 
     orig_game_state = game_state
 
-    game_state_up = game_state
-    game_state_down = game_state
-    game_state_left = game_state
-    game_state_right = game_state
+    game_state_up = copy.deepcopy(game_state)
+    game_state_down = copy.deepcopy(game_state)
+    game_state_left = copy.deepcopy(game_state)
+    game_state_right = copy.deepcopy(game_state)
 
     ai_next_move_up(game_state_up)
     ai_next_move_down(game_state_down)
