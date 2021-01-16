@@ -18,6 +18,7 @@ right_max = []
 # make a copy of game state so as to not effect the original
 # then make a clearly defined first move on the game state copy
 # and finally create all possible branches
+# to simulate all possible movesets for the game
 
 
 def ai_first_move_up(game_state):
@@ -60,7 +61,14 @@ def ai_sequent_moves(game_state):
         game_state_left = copy.deepcopy(game_state)
         game_state_right = copy.deepcopy(game_state)
 
-
 # calculate most favorable first move and apply it
+
+
+def choose_best_move():
+    pass
+
+
+# simulate the ai by repeatedly looking 5 steps ahead and
+# choosing the best move to reach a win condition
 def simulate_game_traversal(game_state):
     pass
