@@ -19,21 +19,25 @@ def ai_sequent_move(game_state, max_list, level):
     level += 1
 
     move_up(game_state_copy_1)
+
     if level < 5:
         max_list.append(get_max_tile(game_state_copy_1))
         ai_sequent_move(game_state_copy_1, max_list, level)
 
     move_down(game_state_copy_2)
+
     if level < 5:
         max_list.append(get_max_tile(game_state_copy_2))
         ai_sequent_move(game_state_copy_2, max_list, level)
 
     move_left(game_state_copy_3)
+
     if level < 5:
         max_list.append(get_max_tile(game_state_copy_3))
         ai_sequent_move(game_state_copy_3, max_list, level)
 
     move_right(game_state_copy_4)
+
     if level < 5:
         max_list.append(get_max_tile(game_state_copy_4))
         ai_sequent_move(game_state_copy_4, max_list, level)
