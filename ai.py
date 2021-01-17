@@ -74,15 +74,61 @@ def ai_sequent_moves(game_state, max_list):
     get_blanks(game_state_left)
     get_blanks(game_state_right)
 
+    if(level < 125):
+        ai_sequent_moves(game_state_up, max_list)
+        ai_sequent_moves(game_state_down, max_list)
+        ai_sequent_moves(game_state_left, max_list)
+        ai_sequent_moves(game_state_right, max_list)
+    elif(level == 125):
+        max_list.append(get_max_tile(game_state_up))
+        max_list.append(get_max_tile(game_state_down))
+        max_list.append(get_max_tile(game_state_left))
+        max_list.append(get_max_tile(game_state_right))
+
 
 # calculate most favorable first move and apply it
 
 
 def choose_best_move():
-    pass
+    true_max_list = []
+
+    global up_max
+    global down_max
+    global left_max
+    global right_max
+
+    true_max_list.append(max(up_max))
+    true_max_list.append(max(down_max))
+    true_max_list.append(max(left_max))
+    true_max_list.append(max(right_max))
+
+    true_max = max(true_max_list)
+
+    if(true_max == max(up_max)):
+        move_up(game_state)
+    elif(true_max == max(down_max)):
+        move_down(game_state)
+    elif(true_max == max(left_max)):
+        move_left(game_state)
+    elif(true_max == max(right_max)):
+        move_right(game_state)
+
+    refresh_game(game_state, game_on)
 
 
 # simulate the ai by repeatedly looking 5 steps ahead and
 # choosing the best move to reach a win condition
 def simulate_game_traversal(game_state):
-    pass
+    for i in range(10):
+        ai_first_move_up(game_state)
+        ai_first_move_down(game_state)
+        ai_first_move_left(game_state)
+        ai_first_move_right(game_state)
+        choose_best_move()
+        #up_max = []
+        #down_max = []
+        #left_max = []
+        #right_max = []
+
+
+simulate_game_traversal((game_state))
