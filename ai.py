@@ -84,31 +84,37 @@ def ai_sequent_moves(game_state, max_list):
         max_list.append(get_max_tile(game_state))
 
 
-ai_first_move_up(game_state)
-ai_first_move_down(game_state)
-ai_first_move_left(game_state)
-ai_first_move_right(game_state)
-
 # calculate most favorable first move and apply it
-'''
-def choose_best_move():
+
+
+def choose_best_move(up_max, down_max, left_max, right_max):
     true_max_list = []
-  
-    true_max_list.append(max(up_max))
-    true_max_list.append(max(down_max))
-    true_max_list.append(max(left_max))
-    true_max_list.append(max(right_max))
+
+    true_max_list.append(sum(up_max)/len(up_max))
+    true_max_list.append(sum(down_max)/len(down_max))
+    true_max_list.append(sum(left_max)/len(left_max))
+    true_max_list.append(sum(right_max)/len(right_max))
 
     true_max = max(true_max_list)
 
-    if(true_max == max(up_max)):
+    if(true_max == true_max_list[0]):
         move_up(game_state)
-    elif(true_max == max(down_max)):
+    elif(true_max == true_max_list[1]):
         move_down(game_state)
-    elif(true_max == max(left_max)):
+    elif(true_max == true_max_list[2]):
         move_left(game_state)
-    elif(true_max == max(right_max)):
+    elif(true_max == true_max_list[3]):
         move_right(game_state)
+
+    get_blanks(game_state)
+
+    up_max = []
+    down_max = []
+    left_max = []
+    right_max = []
+
+    global level
+    level = 0
 
     refresh_game(game_state, game_on)
 
@@ -116,18 +122,12 @@ def choose_best_move():
 # simulate the ai by repeatedly looking 5 steps ahead and
 # choosing the best move to reach a win condition
 def simulate_game_traversal(game_state):
-    for i in range(10):
+    for i in range(1000):
         ai_first_move_up(game_state)
         ai_first_move_down(game_state)
         ai_first_move_left(game_state)
         ai_first_move_right(game_state)
-        choose_best_move()
-        # up_max = []
-        # down_max = []
-        # left_max = []
-        # right_max = []
+        choose_best_move(up_max, down_max, left_max, right_max)
 
 
 simulate_game_traversal((game_state))
-
-'''
