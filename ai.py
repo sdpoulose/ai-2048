@@ -2,7 +2,6 @@ from game_functions import *
 import time
 import copy
 
-
 level = 1  # level of traversal tree
 
 #
@@ -58,9 +57,10 @@ def ai_first_move_right(game_state):
 def ai_sequent_moves(game_state, max_list):
 
     global level
-    level += 1
 
     if level < 80:
+        level += 1
+
         game_state_up = copy.deepcopy(game_state)
         game_state_down = copy.deepcopy(game_state)
         game_state_left = copy.deepcopy(game_state)
@@ -123,7 +123,7 @@ def choose_best_move(up_max, down_max, left_max, right_max):
 # simulate the ai by repeatedly looking 5 steps ahead and
 # choosing the best move to reach a win condition
 def simulate_game_traversal(game_state):
-    for i in range(1000):
+    for i in range(10):
         ai_first_move_up(game_state)
         ai_first_move_down(game_state)
         ai_first_move_left(game_state)
