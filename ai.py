@@ -2,6 +2,8 @@ from game_functions import *
 import time
 import copy
 
+'''
+
 level = 1  # level of traversal tree
 
 #
@@ -132,3 +134,5 @@ def simulate_game_traversal(game_state):
 
 
 simulate_game_traversal((game_state))
+
+'''
