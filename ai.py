@@ -61,7 +61,7 @@ def ai_sequent_moves_up(game_state, max_list):
 
     global level_up
 
-    if level_up < 21:
+    if level_up < 336:
         level_up += 1
 
         game_state_up = copy.deepcopy(game_state)
@@ -79,20 +79,23 @@ def ai_sequent_moves_up(game_state, max_list):
         get_blanks(game_state_left)
         get_blanks(game_state_right)
 
-        ai_sequent_moves_up(game_state_up, max_list)
-        ai_sequent_moves_up(game_state_down, max_list)
-        ai_sequent_moves_up(game_state_left, max_list)
-        ai_sequent_moves_up(game_state_right, max_list)
+        if(game_on):
+
+            ai_sequent_moves_up(game_state_up, max_list)
+            ai_sequent_moves_up(game_state_down, max_list)
+            ai_sequent_moves_up(game_state_left, max_list)
+            ai_sequent_moves_up(game_state_right, max_list)
     else:
         # max_list.append(get_sum_tile(game_state))
         max_list.append(get_max_tile(game_state))
+        max_list.append(get_empty_tile(game_state))
 
 
 def ai_sequent_moves_down(game_state, max_list):
 
     global level_down
 
-    if level_down < 21:
+    if level_down < 336:
         level_down += 1
 
         game_state_up = copy.deepcopy(game_state)
@@ -110,20 +113,22 @@ def ai_sequent_moves_down(game_state, max_list):
         get_blanks(game_state_left)
         get_blanks(game_state_right)
 
-        ai_sequent_moves_down(game_state_up, max_list)
-        ai_sequent_moves_down(game_state_down, max_list)
-        ai_sequent_moves_down(game_state_left, max_list)
-        ai_sequent_moves_down(game_state_right, max_list)
+        if(game_on):
+            ai_sequent_moves_down(game_state_up, max_list)
+            ai_sequent_moves_down(game_state_down, max_list)
+            ai_sequent_moves_down(game_state_left, max_list)
+            ai_sequent_moves_down(game_state_right, max_list)
     else:
         # max_list.append(get_sum_tile(game_state))
         max_list.append(get_max_tile(game_state))
+        max_list.append(get_empty_tile(game_state))
 
 
 def ai_sequent_moves_left(game_state, max_list):
 
     global level_left
 
-    if level_left < 21:
+    if level_left < 336:
         level_left += 1
 
         game_state_up = copy.deepcopy(game_state)
@@ -141,20 +146,22 @@ def ai_sequent_moves_left(game_state, max_list):
         get_blanks(game_state_left)
         get_blanks(game_state_right)
 
-        ai_sequent_moves_left(game_state_up, max_list)
-        ai_sequent_moves_left(game_state_down, max_list)
-        ai_sequent_moves_left(game_state_left, max_list)
-        ai_sequent_moves_left(game_state_right, max_list)
+        if(game_on):
+            ai_sequent_moves_left(game_state_up, max_list)
+            ai_sequent_moves_left(game_state_down, max_list)
+            ai_sequent_moves_left(game_state_left, max_list)
+            ai_sequent_moves_left(game_state_right, max_list)
     else:
         # max_list.append(get_sum_tile(game_state))
         max_list.append(get_max_tile(game_state))
+        max_list.append(get_empty_tile(game_state))
 
 
 def ai_sequent_moves_right(game_state, max_list):
 
     global level_right
 
-    if level_right < 21:
+    if level_right < 336:
         level_right += 1
 
         game_state_up = copy.deepcopy(game_state)
@@ -172,13 +179,15 @@ def ai_sequent_moves_right(game_state, max_list):
         get_blanks(game_state_left)
         get_blanks(game_state_right)
 
-        ai_sequent_moves_right(game_state_up, max_list)
-        ai_sequent_moves_right(game_state_down, max_list)
-        ai_sequent_moves_right(game_state_left, max_list)
-        ai_sequent_moves_right(game_state_right, max_list)
+        if(game_on):
+            ai_sequent_moves_right(game_state_up, max_list)
+            ai_sequent_moves_right(game_state_down, max_list)
+            ai_sequent_moves_right(game_state_left, max_list)
+            ai_sequent_moves_right(game_state_right, max_list)
     else:
-        max_list.append(get_sum_tile(game_state))
-        # max_list.append(get_max_tile(game_state))
+        # max_list.append(get_sum_tile(game_state))
+        max_list.append(get_max_tile(game_state))
+        max_list.append(get_empty_tile(game_state))
 
 # calculate most favorable first move and apply it
 

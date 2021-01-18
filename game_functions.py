@@ -71,3 +71,11 @@ def get_sum_tile(game_state):
     for tile in game_state:
         sum += tile.value
     return sum/16
+
+
+def get_empty_tile(game_state):
+    empty = 0
+    for tile in game_state:
+        if tile.value == 0:
+            empty += 1
+    return empty
