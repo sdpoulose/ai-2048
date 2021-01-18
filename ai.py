@@ -38,14 +38,6 @@ def ai_first_move_down(game_state):
     ai_sequent_moves(game_state_first_down, down_max)
 
 
-def ai_first_move_right(game_state):
-    game_state_first_right = copy.deepcopy(game_state)
-    move_up(game_state_first_right)
-    get_blanks(game_state_first_right)
-
-    ai_sequent_moves(game_state_first_right, right_max)
-
-
 def ai_first_move_left(game_state):
     game_state_first_left = copy.deepcopy(game_state)
     move_up(game_state_first_left)
@@ -54,23 +46,39 @@ def ai_first_move_left(game_state):
     ai_sequent_moves(game_state_first_left, left_max)
 
 
+def ai_first_move_right(game_state):
+    game_state_first_right = copy.deepcopy(game_state)
+    move_up(game_state_first_right)
+    get_blanks(game_state_first_right)
+
+    ai_sequent_moves(game_state_first_right, right_max)
+
+
 # recursive function for all possible moves
 def ai_sequent_moves(game_state, max_list):
 
     global level
     level += 1
 
+    if level < 80:
+        game_state_up = copy.deepcopy(game_state)
+        game_state_down = copy.deepcopy(game_state)
+        game_state_left = copy.deepcopy(game_state)
+        game_state_right = copy.deepcopy(game_state)
+
+        ai_sequent_moves(game_state_up, max_list)
+        ai_sequent_moves(game_state_down, max_list)
+        ai_sequent_moves(game_state_left, max_list)
+        ai_sequent_moves(game_state_right, max_list)
+    else:
+        max_list.append(get_max_tile(game_state))
+
 
 # calculate most favorable first move and apply it
 '''
 def choose_best_move():
     true_max_list = []
-
-    global up_max
-    global down_max
-    global left_max
-    global right_max
-
+  
     true_max_list.append(max(up_max))
     true_max_list.append(max(down_max))
     true_max_list.append(max(left_max))
