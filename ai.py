@@ -66,6 +66,16 @@ def ai_sequent_moves(game_state, max_list):
         game_state_left = copy.deepcopy(game_state)
         game_state_right = copy.deepcopy(game_state)
 
+        move_up(game_state_up)
+        move_down(game_state_down)
+        move_left(game_state_left)
+        move_right(game_state_right)
+
+        get_blanks(game_state_up)
+        get_blanks(game_state_down)
+        get_blanks(game_state_left)
+        get_blanks(game_state_right)
+
         ai_sequent_moves(game_state_up, max_list)
         ai_sequent_moves(game_state_down, max_list)
         ai_sequent_moves(game_state_left, max_list)
@@ -73,6 +83,11 @@ def ai_sequent_moves(game_state, max_list):
     else:
         max_list.append(get_max_tile(game_state))
 
+
+ai_first_move_up(game_state)
+ai_first_move_down(game_state)
+ai_first_move_left(game_state)
+ai_first_move_right(game_state)
 
 # calculate most favorable first move and apply it
 '''
