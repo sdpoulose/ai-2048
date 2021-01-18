@@ -55,6 +55,13 @@ def refresh_game(game_state, game_on):
 def get_max_tile(game_state):
     max = 0
     for tile in game_state:
-        if tile.id > max:
-            max = tile.id
+        if tile.value > max:
+            max = tile.value
     return max
+
+
+def get_sum_tile(game_state):
+    sum = 0
+    for tile in game_state:
+        sum += tile.value
+    return sum/16

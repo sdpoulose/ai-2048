@@ -81,7 +81,8 @@ def ai_sequent_moves(game_state, max_list):
         ai_sequent_moves(game_state_left, max_list)
         ai_sequent_moves(game_state_right, max_list)
     else:
-        max_list.append(get_max_tile(game_state))
+        max_list.append(get_sum_tile(game_state))
+        # max_list.append(get_max_tile(game_state))
 
 
 # calculate most favorable first move and apply it
