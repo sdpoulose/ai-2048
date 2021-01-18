@@ -2,6 +2,17 @@ from game_functions import *
 import time
 import copy
 
+
+up_max = []
+
+
+def ai_first_move_up(game_state):
+    game_state_first_up = copy.deepcopy(game_state)
+    move_up(game_state_first_up)
+    get_blanks(game_state_first_up)
+    up_max.append(1)
+
+
 '''
 
 level = 1  # level of traversal tree
