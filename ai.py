@@ -3,18 +3,6 @@ import time
 import copy
 
 
-up_max = []
-
-
-def ai_first_move_up(game_state):
-    game_state_first_up = copy.deepcopy(game_state)
-    move_up(game_state_first_up)
-    get_blanks(game_state_first_up)
-    up_max.append(1)
-
-
-'''
-
 level = 1  # level of traversal tree
 
 #
@@ -27,19 +15,28 @@ down_max = []
 left_max = []
 right_max = []
 
+
+def edit_list(list):
+    list.append(1)
+
+
+edit_list(up_max)
+
+print(up_max)
+
 # first move defined, then branch out with all possible moves
 # make a copy of game state so as to not effect the original
 # then make a clearly defined first move on the game state copy
 # and finally create all possible branches
 # to simulate all possible movesets for the game
-
+'''
 
 def ai_first_move_up(game_state):
     game_state_first_up = copy.deepcopy(game_state)
     move_up(game_state_first_up)
     get_blanks(game_state_first_up)
 
-    ai_sequent_moves(game_state_first_up, up_max)
+    ai_sequent_moves_up(game_state_first_up)
 
 
 def ai_first_move_down(game_state):
@@ -47,7 +44,7 @@ def ai_first_move_down(game_state):
     move_up(game_state_first_down)
     get_blanks(game_state_first_down)
 
-    ai_sequent_moves(game_state_first_down, down_max)
+    ai_sequent_moves_down(game_state_first_down)
 
 
 def ai_first_move_right(game_state):
@@ -55,7 +52,7 @@ def ai_first_move_right(game_state):
     move_up(game_state_first_right)
     get_blanks(game_state_first_right)
 
-    ai_sequent_moves(game_state_first_right, right_max)
+    ai_sequent_moves_right(game_state_first_right)
 
 
 def ai_first_move_left(game_state):
@@ -63,7 +60,9 @@ def ai_first_move_left(game_state):
     move_up(game_state_first_left)
     get_blanks(game_state_first_left)
 
-    ai_sequent_moves(game_state_first_left, left_max)
+    ai_sequent_moves_left(game_state_first_left)
+
+
 
 
 # recursive function for all possible moves
@@ -138,10 +137,10 @@ def simulate_game_traversal(game_state):
         ai_first_move_left(game_state)
         ai_first_move_right(game_state)
         choose_best_move()
-        #up_max = []
-        #down_max = []
-        #left_max = []
-        #right_max = []
+        # up_max = []
+        # down_max = []
+        # left_max = []
+        # right_max = []
 
 
 simulate_game_traversal((game_state))
