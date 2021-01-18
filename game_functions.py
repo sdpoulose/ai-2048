@@ -32,6 +32,12 @@ def check_game_on(game_state):  # game ends when 2048 is reached
     for tile in game_state:
         if tile.value == 2048:
             game_state = False
+    counter = 0
+    for tile in game_state:
+        if tile.value != 0:
+            counter += 1
+    if counter == 16:
+        game_state = False
 
 ##
 # simple function to 'refresh' the game state
