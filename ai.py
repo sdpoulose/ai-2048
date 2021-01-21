@@ -1,3 +1,5 @@
+"""
+
 from game_functions import *
 import time
 import copy
@@ -263,3 +265,7 @@ def simulate_game_traversal(game_state):
 
 
 simulate_game_traversal((game_state))
+
+"""
+
+print("las vegas ai needs some fixing,\nplease use <python3 ai_monte_carlo> instead")
