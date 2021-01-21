@@ -29,15 +29,16 @@ def get_blanks(game_state):
 
 
 def check_game_on(game_state):  # game ends when 2048 is reached
+    global game_on
     for tile in game_state:
         if tile.value == 2048:
-            game_state = False
+            game_on = False
     counter = 0
     for tile in game_state:
         if tile.value != 0:
             counter += 1
     if counter == 16:
-        game_state = False
+        game_on = False
 
 ##
 # simple function to 'refresh' the game state

@@ -106,3 +106,4 @@ while game_on:
         simulate_first_move_left(game_state)
         simulate_first_move_right(game_state)
     choose_best_move(up_max, down_max, left_max, right_max)
+    check_game_on(game_state)
