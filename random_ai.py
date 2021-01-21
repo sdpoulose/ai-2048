@@ -23,6 +23,7 @@ def simulate_first_move_up(game_state):
             move_left(game_state_up)
         else:
             move_right(game_state_up)
+    up_max.append(get_empty_tile(game_state_up))
 
 
 def simulate_first_move_down(game_state):
@@ -39,6 +40,7 @@ def simulate_first_move_down(game_state):
             move_left(game_state_down)
         else:
             move_right(game_state_down)
+    down_max.append(get_empty_tile(game_state_down))
 
 
 def simulate_first_move_left(game_state):
@@ -55,6 +57,7 @@ def simulate_first_move_left(game_state):
             move_left(game_state_left)
         else:
             move_right(game_state_left)
+    left_max.append(get_empty_tile(game_state_left))
 
 
 def simulate_first_move_right(game_state):
@@ -71,3 +74,4 @@ def simulate_first_move_right(game_state):
             move_left(game_state_right)
         else:
             move_right(game_state_right)
+    right_max.append(get_empty_tile(game_state_right))
