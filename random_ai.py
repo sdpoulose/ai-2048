@@ -99,7 +99,7 @@ def choose_best_move(up_max, down_max, left_max, right_max):
     right_max = []
 
 
-for i in range(100):
+while game_on:
     for i in range(1000):
         simulate_first_move_up(game_state)
         simulate_first_move_down(game_state)
