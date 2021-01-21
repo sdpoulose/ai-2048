@@ -75,3 +75,25 @@ def simulate_first_move_right(game_state):
         else:
             move_right(game_state_right)
     right_max.append(get_empty_tile(game_state_right))
+
+
+def choose_best_move(up_max, down_max, left_max, right_max):
+    empty_tile_list = []
+    empty_tile_list.append(sum(up_max))
+    empty_tile_list.append(sum(down_max))
+    empty_tile_list.append(sum(left_max))
+    empty_tile_list.append(sum(right_max))
+    if max(empty_tile_list) == sum(up_max):
+        move_up(game_state)
+    elif max(empty_tile_list) == sum(down_max):
+        move_down(game_state)
+    elif max(empty_tile_list) == sum(left_max):
+        move_left(game_state)
+    else:
+        move_right(game_state)
+    get_blanks(game_state)
+    refresh_game(game_state, game_on)
+    up_max = []
+    down_max = []
+    left_max = []
+    right_max = []
