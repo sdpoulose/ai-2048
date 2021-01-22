@@ -13,7 +13,7 @@ def simulate_first_move_up(game_state):
     game_state_up = copy.deepcopy(game_state)
     get_blanks(game_state_up)
     move_up(game_state)
-    for iter in range(10):
+    for iter in range(11):
         next_move = random.randint(1, 4)
         if next_move == 1:
             move_up(game_state_up)
