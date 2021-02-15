@@ -64,7 +64,7 @@ def simulate_first_move_right(game_state):
     game_state_right = copy.deepcopy(game_state)
     get_blanks(game_state_right)
     move_right(game_state)
-    for iter in range(15):
+    for iter in range(25):
         next_move = random.randint(1, 4)
         if next_move == 1:
             move_up(game_state_right)
