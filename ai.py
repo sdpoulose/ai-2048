@@ -8,7 +8,7 @@ level_up = 1  # level of traversal tree
 level_down = 1
 level_left = 1
 level_right = 1
-
+test
 #
 # lists to contain maximum values of game state
 # after 5 levels of traversal in the decision tree
